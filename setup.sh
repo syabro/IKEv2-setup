@@ -150,6 +150,8 @@ iptables -I INPUT -i $ETH0ORSIMILAR -m state --state NEW -m recent --update --se
 # accept (non-standard) SSH
 iptables -A INPUT -p tcp --dport $SSHPORT -j ACCEPT
 
+# accept proxy
+iptables -A INPUT -p tcp --dport 33080 -j ACCEPT
 
 # VPN
 
